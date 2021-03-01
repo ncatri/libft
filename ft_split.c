@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 07:09:32 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/26 04:47:55 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/03/01 16:56:39 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,6 @@ static	char	*copy_sub(char *str, int len)
 	return (ptr);
 }
 
-void			free_split(char ***split_ptr, int i)
-{
-	int j;
-
-	j = -1;
-	while (++j < i)
-		free((*split_ptr)[j]);
-}
-
 char			**ft_split(char const *s, char c)
 {
 	char	**split;
@@ -87,8 +78,7 @@ char			**ft_split(char const *s, char c)
 		split[i] = copy_sub((char*)s, word_len((char*)s, c));
 		if (!split[i])
 		{
-			free_split(&split, i);
-			free(split);
+			free_split(split);
 			return (NULL);
 		}
 		s += word_len((char*)s, c);
