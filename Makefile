@@ -43,7 +43,8 @@ SRCS	=	ft_memset.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
 			free_split.c \
-			get_next_line.c
+			get_next_line.c \
+			ft_atod.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -51,7 +52,7 @@ RM		= rm -f
 
 CC		= clang 
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 NAME	= libft.a
 
