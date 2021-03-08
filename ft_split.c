@@ -6,13 +6,24 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 07:09:32 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/03/01 16:56:39 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/03/08 13:14:36 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		words_count(char const *s, char c)
+static int	is_separator(char c, char *charset)
+{
+	while (*charset)
+	{
+		if (*charset == c)
+			return (1);
+		charset++;
+	}
+	return (0);
+}
+
+static	int		words_count(char *s, char *charset)
 {
 	int count;
 	int	word;
@@ -20,7 +31,7 @@ static	int		words_count(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s != c)
+		if (!is_separator(*s, charset))
 			word = 1;
 		else
 		{
@@ -37,12 +48,12 @@ static	int		words_count(char const *s, char c)
 	return (count);
 }
 
-static	int		word_len(char *str, char c)
+static	int		word_len(char *str, char *charset)
 {
 	int i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
+	while (str[i] && !is_separator(str[i], charset))
 		i++;
 	return (i);
 }
@@ -59,7 +70,7 @@ static	char	*copy_sub(char *str, int len)
 	return (ptr);
 }
 
-char			**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char *charset)
 {
 	char	**split;
 	int		i;
@@ -67,21 +78,21 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	num_words = words_count(s, c);
+	num_words = words_count((char*)s, charset);
 	if (!(split = (char**)malloc(sizeof(char*) * (num_words + 1))))
 		return (NULL);
 	i = -1;
 	while (++i < num_words)
 	{
-		while (*s == c)
+		while (is_separator(*s, charset))
 			s++;
-		split[i] = copy_sub((char*)s, word_len((char*)s, c));
+		split[i] = copy_sub((char*)s, word_len((char*)s, charset));
 		if (!split[i])
 		{
 			free_split(split);
 			return (NULL);
 		}
-		s += word_len((char*)s, c);
+		s += word_len((char*)s, charset);
 	}
 	split[i] = NULL;
 	return (split);
