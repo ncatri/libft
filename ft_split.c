@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 07:09:32 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/03/08 13:14:36 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 14:07:02 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	is_separator(char c, char *charset)
 	return (0);
 }
 
-static	int		words_count(char *s, char *charset)
+static	int	words_count(char *s, char *charset)
 {
-	int count;
+	int	count;
 	int	word;
 
 	count = 0;
@@ -48,9 +48,9 @@ static	int		words_count(char *s, char *charset)
 	return (count);
 }
 
-static	int		word_len(char *str, char *charset)
+static	int	word_len(char *str, char *charset)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && !is_separator(str[i], charset))
@@ -60,17 +60,19 @@ static	int		word_len(char *str, char *charset)
 
 static	char	*copy_sub(char *str, int len)
 {
-	char *ptr;
+	char	*ptr;
 
-	if (!(ptr = (char*)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	ptr[len] = '\0';
-	while (len--)
-		ptr[len] = str[len];
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (ptr)
+	{
+		ptr[len] = '\0';
+		while (len--)
+			ptr[len] = str[len];
+	}
 	return (ptr);
 }
 
-char			**ft_split(char const *s, char *charset)
+char	**ft_split(char const *s, char *charset)
 {
 	char	**split;
 	int		i;
@@ -78,22 +80,21 @@ char			**ft_split(char const *s, char *charset)
 
 	if (!s)
 		return (NULL);
-	num_words = words_count((char*)s, charset);
-	if (!(split = (char**)malloc(sizeof(char*) * (num_words + 1))))
-		return (NULL);
-	i = -1;
-	while (++i < num_words)
+	num_words = words_count((char *)s, charset);
+	split = (char **)malloc(sizeof(char *) * (num_words + 1));
+	if (split)
 	{
-		while (is_separator(*s, charset))
-			s++;
-		split[i] = copy_sub((char*)s, word_len((char*)s, charset));
-		if (!split[i])
+		i = -1;
+		while (++i < num_words)
 		{
-			free_split(split);
-			return (NULL);
+			while (is_separator(*s, charset))
+				s++;
+			split[i] = copy_sub((char *)s, word_len((char *)s, charset));
+			if (!split[i])
+				return (free_split(split));
+			s += word_len((char *)s, charset);
 		}
-		s += word_len((char*)s, charset);
+		split[i] = NULL;
 	}
-	split[i] = NULL;
 	return (split);
 }

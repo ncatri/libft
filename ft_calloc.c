@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 03:56:29 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/24 10:17:32 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:21:44 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (!ptr)
 		return (NULL);
 	while (memory--)
-		*((char*)ptr + memory) = 0;
-	return ((void*)ptr);
+		*((char *)ptr + memory) = 0;
+	return ((void *)ptr);
 }

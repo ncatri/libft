@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 03:51:44 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/26 02:03:54 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:21:00 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	my_isspace(int c)
 
 static	int	is_long_overflow(const char *num)
 {
-	int num_len;
+	int	num_len;
 
 	num_len = 0;
 	while (*num && ft_isdigit(*num))
@@ -33,10 +33,10 @@ static	int	is_long_overflow(const char *num)
 		return (0);
 }
 
-int			ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int result;
-	int sign;
+	int	result;
+	int	sign;
 
 	result = 0;
 	sign = 1;

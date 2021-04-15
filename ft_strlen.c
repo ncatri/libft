@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 04:11:14 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/23 04:11:19 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:37:45 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = -1;
 	while (s[++i])

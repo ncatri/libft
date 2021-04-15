@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 14:13:38 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/02/26 11:36:58 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 14:11:21 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ static int	append(char **buf, size_t *pos_ptr, size_t *size_ptr, char c)
 	return (1);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
-	static	t_file	*f;
+	static t_file	*f;
 	char			c;
 	t_buf			b;
 

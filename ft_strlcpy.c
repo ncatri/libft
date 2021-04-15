@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 04:11:33 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/24 09:46:50 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:37:23 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	if (dst == 0 || src == 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 04:13:55 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/23 04:14:25 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:42:55 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*str;
 	size_t	len;
 
-	str = (char*)s;
+	str = (char *)s;
 	len = ft_strlen(s);
 	str += len;
 	while (*str != (unsigned char)c && len--)

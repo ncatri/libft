@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 03:05:29 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/11/25 03:08:37 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:49:48 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ptr;
 
-	if (!(ptr = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
-	ptr->content = content;
-	ptr->next = (NULL);
+	ptr = (t_list *)malloc(sizeof(t_list));
+	if (ptr)
+	{
+		ptr->content = content;
+		ptr->next = (NULL);
+	}
 	return (ptr);
 }
