@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 12:55:32 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/03/01 16:49:20 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 11:26:55 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 256
+#  define BUFFER_SIZE 256
 # endif
 
 # define FDS_LIM	256
@@ -24,7 +24,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-typedef struct	s_file
+typedef struct s_file
 {
 	int		fd;
 	char	buffer[BUFFER_SIZE];
@@ -34,13 +34,16 @@ typedef struct	s_file
 	int		bad;
 }				t_file;
 
-typedef struct	s_buf
+typedef struct s_buf
 {
 	char	*tmp;
 	size_t	pos;
 	size_t	size;
 }				t_buf;
 
-int				get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
+int		initialize_buf_c(t_buf *b, char *c);
+void	check_tfile(t_file **f, int fd);
+int		free_and_zero(t_file **f);
 
 #endif

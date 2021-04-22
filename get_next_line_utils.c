@@ -1,30 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 17:47:36 by ncatrien          #+#    #+#             */
-/*   Updated: 2020/12/07 15:55:21 by ncatrien         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
+#include "libft.h"
 
-#include "get_next_line.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	initialize_buf_c(t_buf *b, char *c)
 {
-	char	*dst_ptr;
-	size_t	i;
+	b->tmp = malloc(BUF_LINE_LIM * sizeof(char));
+	b->pos = 0;
+	b->size = BUF_LINE_LIM;
+	*c = 'a';
+	return (1);
+}
 
-	if (dst == 0 && src == 0)
-		return (NULL);
-	dst_ptr = (char*)dst;
-	i = -1;
-	while (++i < n)
-	{
-		*dst_ptr = *((char*)src + i);
-		dst_ptr++;
-	}
-	return (dst);
+int	free_and_zero(t_file **f)
+{
+	free(*f);
+	*f = 0;
+	return (0);
 }
