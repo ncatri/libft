@@ -58,10 +58,17 @@ CFLAGS	= -Wall -Wextra -Werror -g
 
 NAME	= libft.a
 
+HEADER_DIR = includes/
+
+HEADERS_LIST = libft.h get_next_line.h
+
+%.o: %.c
+	$(CC) $(CFLAGS) -I $(HEADER_DIR) -c $< -o $@
+
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $? 
 
-$(OBJS):	libft.h
+$(OBJS):	$(addprefix $(HEADER_DIR), $(HEADERS_LIST))
 
 all:		$(NAME)
 
