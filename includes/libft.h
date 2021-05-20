@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/04/15 14:07:24 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 07:44:54 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
 # include "get_next_line.h"
+
+# define	FALSE (0)
+# define	TRUE (1)
+typedef	int	t_bool;
 
 typedef struct s_list
 {
@@ -72,6 +75,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
 
 void			*free_split(char **split);
 double			ft_atod(const char *nptr);
+long			ft_atol(const char *nptr);
 
 int				get_next_line(int fd, char **line);
 

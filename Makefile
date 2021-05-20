@@ -46,7 +46,8 @@ SRCS	=	ft_memset.c \
 			free_split.c \
 			get_next_line.c \
 			get_next_line_utils.c \
-			ft_atod.c
+			ft_atod.c \
+			ft_atol.c
 
 OBJS	= $(SRCS:.c=.o)
 
