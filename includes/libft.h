@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/05/20 07:44:54 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/06/03 09:05:20 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define	FALSE (0)
 # define	TRUE (1)
-typedef	int	t_bool;
+typedef int	t_bool;
 
 typedef struct s_list
 {
