@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/06/03 09:05:20 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/09/13 15:32:48 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
 void			*free_split(char **split);
 double			ft_atod(const char *nptr);
 long			ft_atol(const char *nptr);
+t_bool			ft_isspace(int c);
 
 int				get_next_line(int fd, char **line);
 
