@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/09/13 15:32:48 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/09/14 13:59:10 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void			*free_split(char **split);
 double			ft_atod(const char *nptr);
 long			ft_atol(const char *nptr);
 t_bool			ft_isspace(int c);
+t_bool			ft_is_incharset(char target, char *charset);
 
 int				get_next_line(int fd, char **line);
 

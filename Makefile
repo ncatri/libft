@@ -48,7 +48,8 @@ SRCS	=	ft_memset.c \
 			get_next_line_utils.c \
 			ft_atod.c \
 			ft_atol.c \
-			ft_isspace.c
+			ft_isspace.c \
+			ft_is_incharset.c
 
 OBJS	= $(SRCS:.c=.o)
 
