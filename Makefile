@@ -53,7 +53,8 @@ SRCS	=	ft_memset.c \
 			ft_atol.c \
 			ft_isspace.c \
 			ft_is_incharset.c \
-			ft_pushback_array.c
+			ft_pushback_array.c \
+			ft_pushfront_array.c
 
 OBJS	= $(addprefix $(OBJS_FOLDER)/, $(SRCS:.c=.o))
 

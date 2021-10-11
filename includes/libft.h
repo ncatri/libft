@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/10/11 11:22:20 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/10/11 13:13:35 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ int				get_next_line(int fd, char **line);
 /* arrays of pointers */
 
 t_error			ft_pushback_array(void ***array, void *new_elt, size_t array_size);
+t_error			ft_pushfront_array(void ***array, void *new_elt, size_t array_size);
 
 #endif
