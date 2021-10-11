@@ -1,3 +1,5 @@
+OBJS_FOLDER = bin
+
 SRCS	=	ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
@@ -50,15 +52,19 @@ SRCS	=	ft_memset.c \
 			ft_atod.c \
 			ft_atol.c \
 			ft_isspace.c \
-			ft_is_incharset.c
+			ft_is_incharset.c \
+			ft_pushback_array.c
 
-OBJS	= $(SRCS:.c=.o)
+OBJS	= $(addprefix $(OBJS_FOLDER)/, $(SRCS:.c=.o))
 
 RM		= rm -f
 
 CC		= clang 
 
-CFLAGS	= -Wall -Wextra -Werror -g
+HEADER_DIR = includes/
+HEADERS_LIST = libft.h get_next_line.h
+
+CFLAGS	= -Wall -Wextra -Werror -I $(HEADER_DIR) -g
 
 NAME	= libft.a
 
@@ -66,8 +72,9 @@ HEADER_DIR = includes/
 
 HEADERS_LIST = libft.h get_next_line.h
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I $(HEADER_DIR) -c $< -o $@
+$(OBJS_FOLDER)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $? 
@@ -78,6 +85,7 @@ all:		$(NAME)
 
 clean:
 			$(RM) $(OBJS)
+			rmdir $(OBJS_FOLDER)
 
 fclean:		clean
 			$(RM) $(NAME)

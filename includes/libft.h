@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/10/05 12:57:13 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/10/11 11:22:20 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 # include <unistd.h>
 # include "get_next_line.h"
 
+typedef int	t_bool;
 # define	FALSE (0)
 # define	TRUE (1)
-typedef int	t_bool;
+
+typedef int	t_error;
+# define	FAIL (0)
+# define	SUCCESS (1)
 
 typedef struct s_list
 {
@@ -81,5 +85,9 @@ t_bool			ft_isspace(int c);
 t_bool			ft_is_incharset(char target, char *charset);
 
 int				get_next_line(int fd, char **line);
+
+/* arrays of pointers */
+
+t_error			ft_pushback_array(void ***array, void *new_elt, size_t array_size);
 
 #endif
