@@ -86,7 +86,7 @@ all:		$(NAME)
 
 clean:
 			$(RM) $(OBJS)
-			rmdir $(OBJS_FOLDER)
+			$(RM) -r $(OBJS_FOLDER)
 
 fclean:		clean
 			$(RM) $(NAME)
