@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/10/11 13:13:35 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/10/13 11:27:03 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 # include "get_next_line.h"
 
 typedef int	t_bool;
-# define	FALSE (0)
-# define	TRUE (1)
+# ifndef	FALSE
+# 	define	FALSE (0)
+# endif
+# ifndef	TRUE
+#	define	TRUE (1)
+# endif
 
 typedef int	t_error;
 # define	FAIL (0)
