@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 08:34:34 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/04/15 13:48:37 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/10/28 10:29:34 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static	int	number_len(int n)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (n)
 	{
 		i++;
