@@ -17,6 +17,8 @@ static	int	number_len(int n)
 {
 	int	i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	while (n)
 	{
