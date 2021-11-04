@@ -1,6 +1,6 @@
-# include "libft.h"
+#include "libft.h"
 
-t_bool ft_is_incharset(char target, char *charset)
+t_bool	ft_is_incharset(char target, char *charset)
 {
 	if (!charset)
 		return (FALSE);

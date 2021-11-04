@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/10/13 11:27:03 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/11/04 17:08:15 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 # include "get_next_line.h"
 
 typedef int	t_bool;
+
 # ifndef	FALSE
-# 	define	FALSE (0)
+#  define FALSE (0)
 # endif
+
 # ifndef	TRUE
-#	define	TRUE (1)
+#  define TRUE (1)
 # endif
 
 typedef int	t_error;
-# define	FAIL (0)
-# define	SUCCESS (1)
+# define FAIL (0)
+# define SUCCESS (1)
 
 typedef struct s_list
 {
@@ -79,8 +81,10 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
-void			ft_lstdelnode(t_list **alst, t_list *target, void (*del)(void*));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), \
+		void (*del)(void*));
+void			ft_lstdelnode(t_list **alst, t_list *target, \
+		void (*del)(void*));
 
 void			*free_split(char **split);
 double			ft_atod(const char *nptr);
@@ -92,7 +96,9 @@ int				get_next_line(int fd, char **line);
 
 /* arrays of pointers */
 
-t_error			ft_pushback_array(void ***array, void *new_elt, size_t array_size);
-t_error			ft_pushfront_array(void ***array, void *new_elt, size_t array_size);
+t_error			ft_pushback_array(void ***array, void *new_elt, \
+		size_t array_size);
+t_error			ft_pushfront_array(void ***array, void *new_elt, \
+		size_t array_size);
 
 #endif

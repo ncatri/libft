@@ -6,7 +6,7 @@
 /*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:40:57 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/10/25 08:07:44 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/11/04 16:58:31 by ncatrien         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdelnode(t_list **alst, t_list *target, void (*del)(void*))
 	t_list	*tmp;
 
 	if (!alst || !*alst)
-		return;
+		return ;
 	if (*alst == target)
 	{
 		tmp = *alst;
