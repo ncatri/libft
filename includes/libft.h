@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncatrien <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lfourmau <lfourmau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 04:03:17 by ncatrien          #+#    #+#             */
-/*   Updated: 2021/11/04 17:08:15 by ncatrien         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 07:38:10 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 
 typedef int	t_bool;
 
-# ifndef	FALSE
+# ifndef FALSE
 #  define FALSE (0)
 # endif
 
-# ifndef	TRUE
+# ifndef TRUE
 #  define TRUE (1)
 # endif
 
